@@ -1,0 +1,1346 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="MTR Studio: diseño web y soluciones digitales para emprendedores y negocios.">
+  <meta name="theme-color" content="#171716">
+  <title>MTR Studio | Diseño web & soluciones digitales</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #171716;
+      --surface: #20201e;
+      --surface-2: #292926;
+      --text: #f5f2eb;
+      --muted: #aaa8a0;
+      --line: rgba(255,255,255,.12);
+      --coral: #ff8068;
+      --header: rgba(23,23,22,.88);
+      --max-width: 1160px;
+    }
+
+    body.light {
+      --bg: #f7f5f0;
+      --surface: #ffffff;
+      --surface-2: #eeece6;
+      --text: #171716;
+      --muted: #696860;
+      --line: rgba(0,0,0,.13);
+      --header: rgba(247,245,240,.9);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 90px;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: "DM Sans", sans-serif;
+      line-height: 1.6;
+      transition: background .25s ease, color .25s ease;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    button, input, textarea {
+      font: inherit;
+    }
+
+    button, a {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .container {
+      width: min(var(--max-width), calc(100% - 48px));
+      margin-inline: auto;
+    }
+
+    .section {
+      padding: 110px 0;
+    }
+
+    .eyebrow {
+      color: var(--coral);
+      font-size: .76rem;
+      font-weight: 700;
+      letter-spacing: .14em;
+    }
+
+    h1, h2, h3 {
+      font-family: "Space Grotesk", sans-serif;
+      line-height: 1.08;
+      letter-spacing: -.04em;
+    }
+
+    h2 {
+      margin-top: 18px;
+      font-size: clamp(2.4rem, 5vw, 4.3rem);
+    }
+
+    .muted, .section-heading p {
+      color: var(--muted);
+    }
+
+    .section-heading {
+      max-width: 760px;
+      margin-bottom: 48px;
+    }
+
+    .section-heading p {
+      margin-top: 18px;
+      max-width: 560px;
+    }
+
+    .accent {
+      color: var(--coral);
+    }
+
+    /* HEADER */
+
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--header);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .header-inner {
+      min-height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 1.4rem;
+      font-weight: 700;
+      letter-spacing: -.06em;
+    }
+
+    .brand-mark {
+      display: grid;
+      place-items: center;
+      width: 36px;
+      height: 36px;
+      background: var(--coral);
+      color: #171716;
+      border-radius: 11px;
+      font-size: 1rem;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
+
+    .nav a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: .9rem;
+      transition: color .2s ease;
+    }
+
+    .nav a:hover {
+      color: var(--coral);
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .icon-button, .menu-toggle {
+      display: grid;
+      place-items: center;
+      width: 42px;
+      height: 42px;
+      border: 1px solid var(--line);
+      background: transparent;
+      color: var(--text);
+      border-radius: 50%;
+      cursor: pointer;
+    }
+
+    .menu-toggle {
+      display: none;
+      border-radius: 12px;
+      font-size: 1.25rem;
+    }
+
+    /* BUTTONS */
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 50px;
+      padding: 0 22px;
+      border: 1px solid var(--coral);
+      border-radius: 8px;
+      background: var(--coral);
+      color: #171716;
+      font-weight: 700;
+      text-decoration: none;
+      cursor: pointer;
+      transition: transform .2s ease, opacity .2s ease;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+    }
+
+    .button-outline {
+      color: var(--text);
+      background: transparent;
+      border-color: var(--line);
+    }
+
+    /* HERO */
+
+    .hero {
+      min-height: 690px;
+      display: flex;
+      align-items: center;
+      padding: 100px 0 110px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      width: 520px;
+      height: 520px;
+      top: 70px;
+      right: -150px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255,128,104,.15), transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-content {
+      max-width: 850px;
+    }
+
+    .hero h1 {
+      margin: 24px 0;
+      font-size: clamp(3.4rem, 9vw, 7.5rem);
+      letter-spacing: -.075em;
+      line-height: .99;
+    }
+
+    .hero h1 span {
+      color: var(--coral);
+    }
+
+    .hero-description {
+      max-width: 590px;
+      color: var(--muted);
+      font-size: 1.08rem;
+      margin-bottom: 32px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .hero-note {
+      margin-top: 58px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--muted);
+      font-size: .86rem;
+    }
+
+    .status-dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: #7bd6a1;
+      box-shadow: 0 0 0 5px rgba(123,214,161,.1);
+    }
+
+    /* SERVICES */
+
+    .services {
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      background: var(--surface);
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .service-card {
+      padding: 30px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: var(--bg);
+      transition: transform .2s ease, border-color .2s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--coral);
+    }
+
+    .service-number {
+      color: var(--coral);
+      font-family: "Space Grotesk", sans-serif;
+      font-size: .85rem;
+    }
+
+    .service-card h3 {
+      margin: 28px 0 12px;
+      font-size: 1.45rem;
+    }
+
+    .service-card p {
+      color: var(--muted);
+      font-size: .94rem;
+    }
+
+    /* PROJECTS */
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 34px 24px;
+    }
+
+    .project-card {
+      min-width: 0;
+    }
+
+    .project {
+      min-height: 320px;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      text-decoration: none;
+      transition: transform .25s ease, border-color .25s ease;
+    }
+
+    .project:hover {
+      transform: translateY(-5px);
+      border-color: var(--coral);
+    }
+
+    .project-browser {
+      height: 35px;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 0 14px;
+      background: rgba(0,0,0,.16);
+      border-bottom: 1px solid rgba(255,255,255,.1);
+    }
+
+    .project-browser span {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: rgba(255,255,255,.4);
+    }
+
+    .project-tag {
+      display: inline-block;
+      font-size: .65rem;
+      letter-spacing: .12em;
+      font-weight: 700;
+      opacity: .75;
+    }
+
+    .project-info {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 18px 2px 0;
+    }
+
+    .project-info h3 {
+      font-size: 1.25rem;
+      letter-spacing: -.03em;
+    }
+
+    .project-info p {
+      margin-top: 5px;
+      color: var(--muted);
+      font-size: .88rem;
+    }
+
+    .project-arrow {
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+      width: 38px;
+      height: 38px;
+      border: 1px solid var(--line);
+      border-radius: 50%;
+      color: var(--coral);
+      font-size: 1.1rem;
+      text-decoration: none;
+      transition: background .2s ease, transform .2s ease;
+    }
+
+    .project-arrow:hover {
+      background: var(--coral);
+      color: #171716;
+      transform: translateY(-2px);
+    }
+
+    /* NEBULA */
+
+    .nebula {
+      background:
+        radial-gradient(ellipse at 85% 30%, rgba(154,101,255,.45), transparent 42%),
+        linear-gradient(135deg, #111225, #252047 55%, #10101b);
+      color: #fff;
+    }
+
+    .nebula-content {
+      padding: 32px;
+      flex: 1;
+    }
+
+    .nebula-content h3 {
+      margin-top: 16px;
+      font-size: clamp(2.5rem, 5vw, 4rem);
+    }
+
+    .nebula-content h3 span {
+      color: #c7a5ff;
+    }
+
+    .nebula-content p {
+      margin-top: 8px;
+      color: #d1cee3;
+    }
+
+    .nebula-shows {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr 1fr;
+      gap: 10px;
+      margin-top: 28px;
+    }
+
+    .show-card {
+      min-height: 86px;
+      display: flex;
+      align-items: end;
+      padding: 10px;
+      border-radius: 8px;
+      font-size: .65rem;
+      font-weight: 700;
+      letter-spacing: .08em;
+      background: linear-gradient(145deg, #7352b6, #242344);
+    }
+
+    .show-two {
+      background: linear-gradient(145deg, #b05c76, #312039);
+    }
+
+    .show-three {
+      background: linear-gradient(145deg, #397c9c, #20294c);
+    }
+
+    /* IMPULSO FITNESS */
+
+    .impulso {
+      background:
+        radial-gradient(ellipse at 90% 10%, rgba(196,255,63,.22), transparent 38%),
+        linear-gradient(135deg, #171b15, #292f22);
+      color: #f8f9ef;
+    }
+
+    .impulso-content {
+      padding: 32px;
+      flex: 1;
+    }
+
+    .impulso-content h3 {
+      margin-top: 18px;
+      font-size: clamp(2.4rem, 5vw, 4rem);
+      font-weight: 700;
+      font-style: italic;
+    }
+
+    .impulso-content h3 span {
+      color: #c4ff3f;
+    }
+
+    .impulso-content p {
+      margin-top: 8px;
+      color: #c7cbbf;
+    }
+
+    .impulso-bottom {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 28px;
+    }
+
+    .impulso-bottom span {
+      padding: 6px 9px;
+      border: 1px solid rgba(196,255,63,.4);
+      border-radius: 4px;
+      color: #d5f89a;
+      font-size: .62rem;
+      letter-spacing: .07em;
+    }
+
+    /* RESTAURANT */
+
+    .restaurant {
+      background:
+        radial-gradient(ellipse at 85% 30%, rgba(223,157,83,.25), transparent 40%),
+        linear-gradient(135deg, #261914, #3b2419);
+      color: #fff6e9;
+    }
+
+    .restaurant-content {
+      padding: 32px;
+      flex: 1;
+    }
+
+    .restaurant-content h3 {
+      margin-top: 18px;
+      font-size: clamp(2.4rem, 5vw, 4rem);
+    }
+
+    .restaurant-content h3 span {
+      color: #e9b675;
+    }
+
+    .restaurant-content p {
+      margin-top: 8px;
+      color: #e0cabb;
+    }
+
+    .restaurant-menu {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 32px;
+      color: #e9b675;
+      font-size: .64rem;
+      letter-spacing: .09em;
+    }
+
+    /* PULSEBOARD */
+
+    .pulseboard {
+      background:
+        radial-gradient(ellipse at 85% 15%, rgba(92,149,255,.3), transparent 42%),
+        linear-gradient(135deg, #101a2b, #172844);
+      color: #f1f5ff;
+    }
+
+    .pulseboard-content {
+      padding: 32px;
+      flex: 1;
+    }
+
+    .pulseboard-content h3 {
+      margin-top: 18px;
+      font-size: clamp(2.4rem, 5vw, 4rem);
+    }
+
+    .pulseboard-content h3 span {
+      color: #82b2ff;
+    }
+
+    .pulseboard-content p {
+      margin-top: 8px;
+      color: #c1cde1;
+    }
+
+    .pulseboard-stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 26px;
+    }
+
+    .pulse-stat {
+      padding: 14px;
+      border: 1px solid rgba(255,255,255,.14);
+      border-radius: 8px;
+      background: rgba(255,255,255,.05);
+    }
+
+    .pulse-stat > span {
+      display: block;
+      color: #b7c5dc;
+      font-size: .68rem;
+    }
+
+    .pulse-stat strong {
+      display: block;
+      margin: 7px 0 12px;
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 1.65rem;
+    }
+
+    .pulse-bar {
+      height: 5px;
+      overflow: hidden;
+      border-radius: 5px;
+      background: rgba(255,255,255,.12);
+    }
+
+    .pulse-bar span {
+      display: block;
+      width: 84%;
+      height: 100%;
+      border-radius: inherit;
+      background: #82b2ff;
+    }
+
+    .pulse-stat:nth-child(2) .pulse-bar span {
+      width: 68%;
+    }
+
+    /* ABOUT */
+
+    .about {
+      background: var(--surface);
+      border-block: 1px solid var(--line);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: .8fr 1.2fr;
+      gap: 70px;
+      align-items: start;
+    }
+
+    .about-title h2 {
+      font-size: clamp(2.5rem, 5vw, 4.2rem);
+    }
+
+    .about-copy p {
+      color: var(--muted);
+      margin-bottom: 20px;
+    }
+
+    .about-values {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 28px;
+    }
+
+    .about-values span {
+      padding: 8px 12px;
+      border: 1px solid var(--line);
+      border-radius: 100px;
+      font-size: .8rem;
+    }
+
+    /* CONTACT */
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 70px;
+    }
+
+    .contact-copy h2 {
+      margin-bottom: 22px;
+    }
+
+    .contact-copy > p {
+      color: var(--muted);
+      margin-bottom: 28px;
+    }
+
+    .contact-detail {
+      padding: 17px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .contact-detail span {
+      display: block;
+      color: var(--muted);
+      font-size: .78rem;
+      margin-bottom: 4px;
+    }
+
+    .contact-detail a {
+      text-decoration: none;
+    }
+
+    .contact-form {
+      padding: 28px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: var(--surface);
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .form-field {
+      margin-bottom: 18px;
+    }
+
+    .form-field label {
+      display: block;
+      margin-bottom: 8px;
+      font-size: .85rem;
+      font-weight: 600;
+    }
+
+    .form-field input,
+    .form-field textarea {
+      width: 100%;
+      padding: 13px 14px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--bg);
+      color: var(--text);
+      outline: none;
+    }
+
+    .form-field input:focus,
+    .form-field textarea:focus {
+      border-color: var(--coral);
+    }
+
+    .form-field textarea {
+      min-height: 135px;
+      resize: vertical;
+    }
+
+    .form-status {
+      display: none;
+      margin-top: 16px;
+      padding: 14px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      color: var(--text);
+      font-size: .88rem;
+      overflow-wrap: anywhere;
+    }
+
+    .form-status.visible {
+      display: block;
+    }
+
+    .form-status a {
+      color: var(--coral);
+    }
+
+    /* FOOTER */
+
+    .footer {
+      padding: 30px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .footer p, .footer a {
+      color: var(--muted);
+      font-size: .82rem;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 20px;
+    }
+
+    .footer-links a {
+      text-decoration: none;
+    }
+
+    .footer-links a:hover {
+      color: var(--coral);
+    }
+
+    /* WHATSAPP */
+
+    .whatsapp {
+      position: fixed;
+      right: 24px;
+      bottom: 24px;
+      z-index: 90;
+      display: grid;
+      place-items: center;
+      width: 54px;
+      height: 54px;
+      border-radius: 50%;
+      background: #25d366;
+      color: #102316;
+      font-size: 1.35rem;
+      font-weight: 700;
+      text-decoration: none;
+      box-shadow: 0 8px 30px rgba(0,0,0,.2);
+    }
+
+    /* RESPONSIVE */
+
+    @media (max-width: 850px) {
+      .nav {
+        gap: 16px;
+      }
+
+      .nav a {
+        font-size: .82rem;
+      }
+
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .about-grid, .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+      }
+
+      .about-title h2 {
+        max-width: 600px;
+      }
+    }
+
+    @media (max-width: 650px) {
+      .container {
+        width: min(100% - 32px, var(--max-width));
+      }
+
+      .section {
+        padding: 78px 0;
+      }
+
+      .header-inner {
+        min-height: 68px;
+      }
+
+      .menu-toggle {
+        display: grid;
+      }
+
+      .nav {
+        position: absolute;
+        top: 68px;
+        left: 0;
+        right: 0;
+        display: none;
+        align-items: stretch;
+        flex-direction: column;
+        gap: 0;
+        padding: 12px 24px 22px;
+        background: var(--bg);
+        border-bottom: 1px solid var(--line);
+      }
+
+      .nav.open {
+        display: flex;
+      }
+
+      .nav a {
+        padding: 13px 0;
+        border-bottom: 1px solid var(--line);
+        font-size: .95rem;
+      }
+
+      .hero {
+        min-height: auto;
+        padding: 90px 0 75px;
+      }
+
+      .hero h1 {
+        font-size: clamp(3.2rem, 15vw, 5rem);
+      }
+
+      .hero-description {
+        font-size: 1rem;
+      }
+
+      .hero-note {
+        margin-top: 38px;
+      }
+
+      .project-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+
+      .project {
+        min-height: 300px;
+      }
+
+      .nebula-content, .impulso-content,
+      .restaurant-content, .pulseboard-content {
+        padding: 25px;
+      }
+
+      .pulseboard-stats {
+        gap: 8px;
+      }
+
+      .pulse-stat {
+        padding: 10px;
+      }
+
+      .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+      }
+
+      .contact-form {
+        padding: 20px;
+      }
+
+      .footer-inner {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .whatsapp {
+        right: 16px;
+        bottom: 16px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *, *::before, *::after {
+        transition-duration: .01ms !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="header">
+    <div class="container header-inner">
+      <a class="brand" href="#inicio" aria-label="MTR Studio, inicio">
+        <span class="brand-mark">M</span>
+        <span>MTR Studio</span>
+      </a>
+
+      <nav class="nav" id="main-nav" aria-label="Navegación principal">
+        <a href="#inicio">Inicio</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#proyectos">Proyectos</a>
+        <a href="#nosotros">Nosotros</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="icon-button" id="theme-toggle" type="button" aria-label="Cambiar tema" title="Cambiar tema">◐</button>
+        <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="main-nav">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- PORTADA -->
+    <section class="hero" id="inicio">
+      <div class="container">
+        <div class="hero-content">
+          <span class="eyebrow">DISEÑO WEB & SOLUCIONES DIGITALES</span>
+          <h1>Ideas que se convierten en <span>experiencias.</span></h1>
+          <p class="hero-description">
+            Diseñamos sitios web modernos, funcionales y atractivos para emprendedores y negocios que quieren destacar en internet.
+          </p>
+          <div class="hero-buttons">
+            <a class="button" href="#proyectos">Ver proyectos <span>↗</span></a>
+            <a class="button button-outline" href="#contacto">Hablemos</a>
+          </div>
+          <div class="hero-note">
+            <span class="status-dot"></span>
+            <span>Diseño creativo. Soluciones a medida.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICIOS -->
+    <section class="services section" id="servicios">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">01 — SERVICIOS</span>
+          <h2>Soluciones digitales <span class="muted">para crecer.</span></h2>
+          <p>Creamos experiencias pensadas para comunicar mejor tu propuesta y conectar con tus clientes.</p>
+        </div>
+
+        <div class="services-grid">
+          <article class="service-card">
+            <span class="service-number">01 / WEB</span>
+            <h3>Diseño web</h3>
+            <p>Sitios modernos, adaptables a celulares y computadoras, con una identidad visual coherente con tu negocio.</p>
+          </article>
+
+          <article class="service-card">
+            <span class="service-number">02 / BRANDING</span>
+            <h3>Identidad digital</h3>
+            <p>Diseño visual y recursos digitales para que tu marca tenga una presencia clara y reconocible.</p>
+          </article>
+
+          <article class="service-card">
+            <span class="service-number">03 / DIGITAL</span>
+            <h3>Soluciones a medida</h3>
+            <p>Herramientas y experiencias digitales pensadas según las necesidades de cada proyecto.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROYECTOS -->
+    <section class="section" id="proyectos">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">02 — PORTFOLIO</span>
+          <h2>Proyectos <span class="muted">seleccionados.</span></h2>
+          <p>Una selección de experiencias digitales para diferentes ideas, marcas y necesidades.</p>
+        </div>
+
+        <div class="project-grid">
+          <!-- NÉBULA -->
+          <article class="project-card">
+            <a class="project nebula"
+               href="https://lenzo2130.github.io/EJEMPLO-Pagina-descubrimiento-de-series./"
+               target="_blank" rel="noopener noreferrer"
+               aria-label="Visitar el proyecto Nébula">
+              <div class="project-browser"><span></span><span></span><span></span></div>
+              <div class="nebula-content">
+                <span class="project-tag">ENTRETENIMIENTO</span>
+                <h3>Nébula<span>.</span></h3>
+                <p>Tu próximo universo empieza acá.</p>
+                <div class="nebula-shows">
+                  <div class="show-card show-one">SERIES</div>
+                  <div class="show-card show-two">CINE</div>
+                  <div class="show-card show-three">EXPLORAR</div>
+                </div>
+              </div>
+            </a>
+            <div class="project-info">
+              <div>
+                <h3>Nébula</h3>
+                <p>Descubrimiento de series</p>
+              </div>
+              <a class="project-arrow"
+                 href="https://lenzo2130.github.io/EJEMPLO-Pagina-descubrimiento-de-series./"
+                 target="_blank" rel="noopener noreferrer" aria-label="Abrir Nébula">↗</a>
+            </div>
+          </article>
+
+          <!-- IMPULSO FITNESS -->
+          <article class="project-card">
+            <a class="project impulso"
+               href="https://lenzo2130.github.io/EJEMPLO-Pagina-gimansio./"
+               target="_blank" rel="noopener noreferrer"
+               aria-label="Visitar Impulso Fitness">
+              <div class="project-browser"><span></span><span></span><span></span></div>
+              <div class="impulso-content">
+                <span class="project-tag">FITNESS & BIENESTAR</span>
+                <h3>IMPULSO<span>.</span></h3>
+                <p>Superá tus propios límites.</p>
+                <div class="impulso-bottom">
+                  <span>FUERZA</span>
+                  <span>DISCIPLINA</span>
+                  <span>PROGRESO</span>
+                </div>
+              </div>
+            </a>
+            <div class="project-info">
+              <div>
+                <h3>Impulso Fitness</h3>
+                <p>Web para gimnasio</p>
+              </div>
+              <a class="project-arrow"
+                 href="https://lenzo2130.github.io/EJEMPLO-Pagina-gimansio./"
+                 target="_blank" rel="noopener noreferrer" aria-label="Abrir Impulso Fitness">↗</a>
+            </div>
+          </article>
+
+          <!-- RESTAURANTE -->
+          <article class="project-card">
+            <a class="project restaurant"
+               href="https://lenzo2130.github.io/EJEMPLO-P-gina-de-restaurante./"
+               target="_blank" rel="noopener noreferrer"
+               aria-label="Visitar la página de restaurante">
+              <div class="project-browser"><span></span><span></span><span></span></div>
+              <div class="restaurant-content">
+                <span class="project-tag">GASTRONOMÍA</span>
+                <h3>Buon<span>Gusto.</span></h3>
+                <p>Una experiencia para disfrutar.</p>
+                <div class="restaurant-menu">
+                  <span>MENÚ</span>
+                  <span>ESPECIALIDADES</span>
+                  <span>RESERVAS</span>
+                </div>
+              </div>
+            </a>
+            <div class="project-info">
+              <div>
+                <h3>Restaurante</h3>
+                <p>Web gastronómica</p>
+              </div>
+              <a class="project-arrow"
+                 href="https://lenzo2130.github.io/EJEMPLO-P-gina-de-restaurante./"
+                 target="_blank" rel="noopener noreferrer" aria-label="Abrir restaurante">↗</a>
+            </div>
+          </article>
+
+          <!-- PULSEBOARD -->
+          <article class="project-card">
+            <a class="project pulseboard"
+               href="https://lenzo2130.github.io/EJEMPLO-Pulseboard/"
+               target="_blank" rel="noopener noreferrer"
+               aria-label="Visitar Pulseboard">
+              <div class="project-browser"><span></span><span></span><span></span></div>
+              <div class="pulseboard-content">
+                <span class="project-tag">PRODUCTIVIDAD</span>
+                <h3>Pulseboard<span>.</span></h3>
+                <p>Todo tu progreso, en un solo lugar.</p>
+                <div class="pulseboard-stats">
+                  <div class="pulse-stat">
+                    <span>Progreso</span>
+                    <strong>84%</strong>
+                    <div class="pulse-bar"><span></span></div>
+                  </div>
+                  <div class="pulse-stat">
+                    <span>Tareas completadas</span>
+                    <strong>24</strong>
+                    <div class="pulse-bar"><span></span></div>
+                  </div>
+                </div>
+              </div>
+            </a>
+            <div class="project-info">
+              <div>
+                <h3>Pulseboard</h3>
+                <p>Dashboard de productividad</p>
+              </div>
+              <a class="project-arrow"
+                 href="https://lenzo2130.github.io/EJEMPLO-Pulseboard/"
+                 target="_blank" rel="noopener noreferrer" aria-label="Abrir Pulseboard">↗</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- NOSOTROS -->
+    <section class="about section" id="nosotros">
+      <div class="container about-grid">
+        <div class="about-title">
+          <span class="eyebrow">03 — NOSOTROS</span>
+          <h2>Diseño con <span class="accent">intención.</span></h2>
+        </div>
+        <div class="about-copy">
+          <p>MTR Studio nace de una idea simple: cada negocio merece una presencia digital que represente lo que hace y hacia dónde quiere ir.</p>
+          <p>Buscamos combinar estética, claridad y funcionalidad para crear sitios web que no solo se vean bien, sino que también sean fáciles de usar.</p>
+          <p>Cada proyecto es una oportunidad para transformar una idea en una experiencia digital concreta.</p>
+          <div class="about-values">
+            <span>Diseño moderno</span>
+            <span>Experiencia de usuario</span>
+            <span>Adaptabilidad</span>
+            <span>Atención al detalle</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section class="section" id="contacto">
+      <div class="container contact-grid">
+        <div class="contact-copy">
+          <span class="eyebrow">04 — CONTACTO</span>
+          <h2>Tu próxima idea empieza <span class="accent">acá.</span></h2>
+          <p>Contame qué tenés en mente. Podemos conversar sobre tu proyecto y encontrar una solución que se adapte a lo que necesitás.</p>
+
+          <div class="contact-detail">
+            <span>Correo electrónico</span>
+            <a id="contact-email-link" href="mailto:contacto@mtrstudio.com">contacto@mtrstudio.com</a>
+          </div>
+          <div class="contact-detail">
+            <span>Respuesta</span>
+            <p>Podés dejar tu consulta mediante el formulario.</p>
+          </div>
+        </div>
+
+        <form class="contact-form" id="contact-form">
+          <div class="form-row">
+            <div class="form-field">
+              <label for="name">Nombre</label>
+              <input id="name" name="name" type="text" placeholder="Tu nombre" required>
+            </div>
+            <div class="form-field">
+              <label for="email">Correo electrónico</label>
+              <input id="email" name="email" type="email" placeholder="tu@email.com" required>
+            </div>
+          </div>
+
+          <div class="form-field">
+            <label for="subject">¿Qué necesitás?</label>
+            <input id="subject" name="subject" type="text" placeholder="Diseño web, tienda online..." required>
+          </div>
+
+          <div class="form-field">
+            <label for="message">Contame sobre tu proyecto</label>
+            <textarea id="message" name="message" placeholder="Escribí tu mensaje..." required></textarea>
+          </div>
+
+          <button class="button" type="submit">Preparar mensaje <span>↗</span></button>
+
+          <div class="form-status" id="form-status" role="status" aria-live="polite"></div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <a class="brand" href="#inicio">
+        <span class="brand-mark">M</span>
+        <span>MTR Studio</span>
+      </a>
+      <p>© <span id="year"></span> MTR Studio. Todos los derechos reservados.</p>
+      <div class="footer-links">
+        <a href="#inicio">Inicio</a>
+        <a href="#proyectos">Proyectos</a>
+        <a href="#contacto">Contacto</a>
+      </div>
+    </div>
+  </footer>
+
+  <a class="whatsapp" id="whatsapp-link" href="#contacto" aria-label="Contactar por WhatsApp" title="Contactar">W</a>
+
+  <script>
+    // Menú para celulares
+    const menuToggle = document.getElementById("menu-toggle");
+    const mainNav = document.getElementById("main-nav");
+
+    menuToggle.addEventListener("click", () => {
+      const isOpen = mainNav.classList.toggle("open");
+      menuToggle.setAttribute("aria-expanded", String(isOpen));
+      menuToggle.setAttribute("aria-label", isOpen ? "Cerrar menú" : "Abrir menú");
+      menuToggle.textContent = isOpen ? "×" : "☰";
+    });
+
+    mainNav.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", () => {
+        mainNav.classList.remove("open");
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.setAttribute("aria-label", "Abrir menú");
+        menuToggle.textContent = "☰";
+      });
+    });
+
+    // Tema claro / oscuro
+    const themeToggle = document.getElementById("theme-toggle");
+
+    themeToggle.addEventListener("click", () => {
+      document.body.classList.toggle("light");
+      const lightMode = document.body.classList.contains("light");
+      themeToggle.setAttribute("aria-label", lightMode ? "Activar tema oscuro" : "Activar tema claro");
+    });
+
+    // Año del footer
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Formulario: copia el mensaje y muestra el correo de contacto.
+    // Reemplazá este correo por el correo real de MTR Studio.
+    const CONTACT_EMAIL = "contacto@mtrstudio.com";
+    const contactEmailLink = document.getElementById("contact-email-link");
+    const formStatus = document.getElementById("form-status");
+
+    contactEmailLink.textContent = CONTACT_EMAIL;
+    contactEmailLink.href = "mailto:" + CONTACT_EMAIL;
+
+    document.getElementById("contact-form").addEventListener("submit", async event => {
+      event.preventDefault();
+
+      const form = event.currentTarget;
+      const data = new FormData(form);
+
+      const message =
+        "Consulta desde MTR Studio\n\n" +
+        "Nombre: " + data.get("name") + "\n" +
+        "Correo: " + data.get("email") + "\n" +
+        "Consulta: " + data.get("subject") + "\n\n" +
+        "Mensaje:\n" + data.get("message");
+
+      try {
+        await navigator.clipboard.writeText(message);
+        formStatus.innerHTML =
+          "Tu mensaje ha sido guardado. Copiamos el texto para que puedas enviarlo a: " +
+          '<a href="mailto:' + CONTACT_EMAIL + '">' + CONTACT_EMAIL + "</a>";
+        formStatus.classList.add("visible");
+      } catch (error) {
+        formStatus.textContent =
+          "No pudimos copiar automáticamente el mensaje. Seleccioná y copiá los datos del formulario y escribinos a " + CONTACT_EMAIL + ".";
+        formStatus.classList.add("visible");
+      }
+    });
+
+    // WhatsApp: reemplazá el número de ejemplo por el tuyo,
+    // incluyendo el código de país y de área, sin + ni espacios.
+    const WHATSAPP_NUMBER = "";
+    const whatsappLink = document.getElementById("whatsapp-link");
+
+    if (WHATSAPP_NUMBER) {
+      whatsappLink.href = "https://wa.me/" + WHATSAPP_NUMBER;
+      whatsappLink.target = "_blank";
+      whatsappLink.rel = "noopener noreferrer";
+    } else {
+      whatsappLink.href = "#contacto";
+    }
+  </script>
+</body>
+</html>
