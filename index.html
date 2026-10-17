@@ -1756,6 +1756,39 @@
     body.light .hero-visual::before { background-image:linear-gradient(rgba(0,0,0,.055) 1px, transparent 1px),linear-gradient(90deg,rgba(0,0,0,.055) 1px,transparent 1px); }
     body.light .hero-showcase { box-shadow:0 35px 90px rgba(0,0,0,.12),0 0 70px rgba(255,128,104,.1); }
 
+
+    /* Marca compacta MTR en encabezado y pie */
+    .brand-mark-logo {
+      width: 48px;
+      height: 36px;
+      padding: 0 4px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 5px;
+      background: transparent;
+      color: var(--text);
+      font-family: "Space Grotesk", sans-serif;
+      font-size: .86rem;
+      font-weight: 700;
+      letter-spacing: -.09em;
+      position: relative;
+      isolation: isolate;
+    }
+    .brand-mark-logo::after {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      width: 14px;
+      height: 14px;
+      right: 2px;
+      top: 1px;
+      border-top: 3px solid var(--coral);
+      border-right: 3px solid var(--coral);
+      border-radius: 0 7px 0 0;
+      transform: skew(-8deg);
+    }
+
 </style>
 
 </head>
@@ -1768,7 +1801,7 @@
 
       <a class="brand" href="#inicio" aria-label="MTR Studio, inicio">
 
-        <span class="brand-mark">M</span>
+        <span class="brand-mark brand-mark-logo" aria-label="MTR">MTR</span>
 
         <span>MTR Studio</span>
 
