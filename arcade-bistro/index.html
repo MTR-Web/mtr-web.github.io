@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#090811">
+  <meta name="description" content="Arcade & Bistro: burgers, tragos, juegos y noches fuera de este mundo. Explorá la carta y armá tu pedido.">
+  <title>ARCADE & BISTRO — Play. Eat. Repeat.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=1">
+  <script src="script.js?v=1" defer></script>
+</head>
+<body>
+  <div class="scanlines" aria-hidden="true"></div>
+  <div class="topbar"><span><i class="live-dot"></i> <span id="open-status">CARGANDO ESTADO…</span></span><span class="topbar-right">BUENOS AIRES, AR <b>///</b> PLAYER 01 READY</span></div>
+  <header class="header">
+    <a class="logo" href="#inicio" aria-label="Arcade & Bistro inicio"><span class="logo-icon">A<span>+</span></span><span>ARCADE<small>& BISTRO</small></span></a>
+    <button class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Abrir menú">☰</button>
+    <nav class="nav" id="main-nav"><a href="#carta">LA CARTA</a><a href="#experiencia">EXPERIENCIA</a><a href="#visitanos">UBICACIÓN</a><button class="nav-reserve" data-open-reservation>RESERVAR <span>↗</span></button></nav>
+  </header>
+  <main>
+    <section class="hero" id="inicio">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="eyebrow-line"></span> INSERT COIN. STAY A WHILE.</p>
+        <h1>SUBÍ DE<br>NIVEL.<br><em>BAJÁ EL</em><br>HAMBRE<span class="pink">.</span></h1>
+        <p class="hero-description">Burgers legendarias, tragos con power-ups y partidas que se alargan hasta tarde. Tu próxima side quest empieza acá.</p>
+        <div class="hero-actions"><a class="button button-primary" href="#carta">VER LA CARTA <span>↓</span></a><button class="button button-outline" data-open-reservation>RESERVAR MESA <span>↗</span></button></div>
+        <div class="hero-foot"><span class="pixel-star">✳</span><span>COMÉ. JUGÁ. REPETÍ.</span><span class="hero-foot-line"></span><span class="hero-coords">34°36' S / 58°23' W</span></div>
+      </div>
+      <div class="hero-art">
+        <div class="hero-image-frame"><img src="https://images.unsplash.com/photo-1571091718767-18b5b1457add?auto=format&fit=crop&w=1200&q=85" alt="Hamburguesa artesanal con queso y papas"></div>
+        <div class="floating-tag tag-top"><span>★</span> PLAYER'S CHOICE <b>001</b></div>
+        <div class="floating-tag tag-bottom"><span class="equalizer">▂▄▆</span><span>GOOD FOOD<br><b>HIGH SCORES</b></span></div>
+        <div class="art-orbit orbit-one"></div><div class="art-orbit orbit-two"></div><div class="hero-side-label">ARCADE MODE // ON</div>
+      </div>
+      <div class="hero-bottomline"><span>EST. 2026</span><span>NO CONTINUES NEEDED</span><span>SCROLL TO PLAY ↓</span></div>
+    </section>
+    <section class="ticker" aria-label="Nuestra experiencia"><div class="ticker-track"><span>PIXEL-PERFECT BURGERS ✳</span><span>TRAGOS CON POWER-UP ✳</span><span>JUEGOS & GOOD VIBES ✳</span><span>GAME OVER AL ABURRIMIENTO ✳</span><span>PIXEL-PERFECT BURGERS ✳</span><span>TRAGOS CON POWER-UP ✳</span><span>JUEGOS & GOOD VIBES ✳</span><span>GAME OVER AL ABURRIMIENTO ✳</span></div></section>
+    <section class="menu-section section" id="carta">
+      <div class="section-heading"><div><p class="eyebrow">SELECT YOUR LOADOUT</p><h2>LA CARTA<span class="pink">.</span></h2></div><p>Elegí tu personaje. Armá tu combo.<br>El boss final es compartir las papas.</p></div>
+      <div class="menu-toolbar"><div class="filters" id="menu-filters" aria-label="Filtrar por categoría"></div><label class="search-box"><span>⌕</span><input id="menu-search" type="search" placeholder="Buscar en la carta…" aria-label="Buscar productos"></label></div>
+      <div class="menu-grid" id="menu-grid" aria-live="polite"></div>
+      <p class="disclaimer">PRECIOS EN PESOS ARGENTINOS · IMÁGENES ILUSTRATIVAS · CONSULTÁ ALÉRGENOS AL PERSONAL.</p>
+    </section>
+    <section class="experience section" id="experiencia"><div class="experience-visual"><img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=1200&q=85" alt="Setup gamer con luces de colores"><span class="visual-sticker">PRESS<br>START</span></div><div class="experience-copy"><p class="eyebrow">MORE THAN A MEAL</p><h2>NO VENÍS<br>SOLO A <em>COMER.</em></h2><p>Venís por la revancha, por esa ronda que se estira, por el amigo que dice “una última y nos vamos”. Acá la noche tiene otra pantalla.</p><div class="feature-list"><div><span>01</span><p><b>ARCADE ZONE</b><small>Clásicos, desafíos y récords nuevos.</small></p></div><div><span>02</span><p><b>TABLETOP MODE</b><small>Juegos de mesa para armar equipo.</small></p></div><div><span>03</span><p><b>FOOD & DRINKS</b><small>Combos, mocktails y energía extra.</small></p></div></div><button class="button button-primary" data-open-reservation>ARMÁ TU PARTY <span>↗</span></button></div></section>
+    <section class="visit-section section" id="visitanos"><div class="section-heading"><div><p class="eyebrow">FIND YOUR PLAYER TWO</p><h2>ENCONTRANOS<span class="pink">.</span></h2></div><p>Tu próximo punto de encuentro<br>está a una partida de distancia.</p></div><div class="visit-grid"><div class="visit-map"><div class="map-grid"></div><div class="map-pin">A<span>+</span></div><div class="map-caption">ARCADE & BISTRO <small>YOUR NEXT CHECKPOINT</small></div><span class="map-coordinate">34°36' S · 58°23' W</span></div><div class="visit-details"><div class="detail-block"><span class="detail-index">01 / DIRECCIÓN</span><h3>BUENOS AIRES<br><em>ARGENTINA</em></h3><p>Dirección ficticia para esta demo.<br>Actualizala antes de publicar.</p></div><div class="detail-block"><span class="detail-index">02 / HORARIOS</span><p class="hours-line">MAR — DOM <b>18:00 — 02:00</b></p><p class="hours-line">LUNES <b>CERRADO</b></p><small>El estado de abierto/cerrado se calcula automáticamente.</small></div><div class="detail-block socials"><span class="detail-index">03 / SEGUINOS</span><a href="https://instagram.com/" target="_blank" rel="noopener">INSTAGRAM ↗</a><a href="https://tiktok.com/" target="_blank" rel="noopener">TIKTOK ↗</a></div><button class="button button-primary" data-open-reservation>RESERVAR MESA <span>↗</span></button></div></div></section>
+  </main>
+  <footer><a class="logo" href="#inicio"><span class="logo-icon">A<span>+</span></span><span>ARCADE<small>& BISTRO</small></span></a><p>GOOD FOOD. GREAT GAMES.<br>NO GAME OVER HERE.</p><span>© 2026 ARCADE & BISTRO <b>///</b> DEMO</span></footer>
+  <button class="cart-fab" id="cart-fab" aria-label="Abrir pedido"><span>▣</span> TU PEDIDO <b id="cart-count">0</b><strong id="cart-fab-total">$ 0</strong></button>
+  <div class="overlay" id="cart-overlay"></div><aside class="cart-drawer" id="cart-drawer" aria-label="Tu pedido" aria-hidden="true"><div class="drawer-head"><div><p class="eyebrow">PLAYER INVENTORY</p><h2>Tu pedido<span class="pink">.</span></h2></div><button class="icon-button" id="close-cart" aria-label="Cerrar pedido">×</button></div><div id="cart-items" class="cart-items"><div class="empty-cart">Tu inventario está vacío.<br><span>Agregá algo rico para empezar.</span></div></div><div class="cart-footer"><div class="cart-total"><span>TOTAL ESTIMADO</span><strong id="cart-total">$ 0</strong></div><p class="cart-note">Confirmaremos disponibilidad y total al recibir tu mensaje.</p><button class="button button-primary full-button" id="send-order">ENVIAR PEDIDO POR WHATSAPP <span>↗</span></button><button class="clear-cart" id="clear-cart">VACIAR PEDIDO</button></div></aside>
+  <div class="modal-backdrop" id="reservation-modal" aria-hidden="true"><section class="reservation-modal" role="dialog" aria-modal="true" aria-labelledby="reservation-title"><button class="icon-button modal-close" id="close-reservation" aria-label="Cerrar reserva">×</button><p class="eyebrow">SAVE YOUR PLAYER SLOT</p><h2 id="reservation-title">RESERVÁ<br><em>TU MESA.</em></h2><p class="modal-intro">Completá tus datos y coordinamos por WhatsApp.</p><form id="reservation-form"><label>Tu nombre<input name="name" required maxlength="70" placeholder="Nombre y apellido"></label><div class="form-row"><label>Personas<select name="people" required><option value="1">1 persona</option><option value="2" selected>2 personas</option><option value="3">3 personas</option><option value="4">4 personas</option><option value="5">5 personas</option><option value="6">6 personas</option><option value="7+">7 o más</option></select></label><label>Hora<input name="time" type="time" min="18:00" max="23:59" required value="20:00"></label></div><label>Fecha<input name="date" type="date" id="reservation-date" required></label><button class="button button-primary full-button" type="submit">SOLICITAR RESERVA <span>↗</span></button><small>La reserva queda pendiente hasta que el local la confirme.</small></form></section></div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
