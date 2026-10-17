@@ -1789,6 +1789,29 @@
       transform: skew(-8deg);
     }
 
+
+    .brand-mark-image {
+      display: inline-block;
+      flex: 0 0 auto;
+      width: 76px;
+      height: 38px;
+      overflow: hidden;
+      background: #080808;
+      border-radius: 4px;
+      vertical-align: middle;
+    }
+    .brand-mark-image img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+    .footer-brand-image { width: 82px; height: 42px; }
+    @media (max-width: 600px) {
+      .brand-mark-image { width: 62px; height: 34px; }
+      .footer-brand-image { width: 72px; height: 38px; }
+    }
 </style>
 
 </head>
@@ -1801,7 +1824,7 @@
 
       <a class="brand" href="#inicio" aria-label="MTR Studio, inicio">
 
-        <span class="brand-mark brand-mark-logo" aria-label="MTR">MTR</span>
+        <span class="brand-mark-image"><img src="logo-mtr.png" alt="Logo MTR Studio"></span>
 
         <span>MTR Studio</span>
 
@@ -2386,7 +2409,7 @@
 
       <a class="brand" href="#inicio">
 
-        <span class="brand-mark">M</span>
+        <span class="brand-mark-image footer-brand-image"><img src="logo-mtr.png" alt="Logo MTR Studio"></span>
 
         <span>MTR Studio</span>
 
