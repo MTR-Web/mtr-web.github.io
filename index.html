@@ -1490,35 +1490,23 @@
       }
 
       .nav {
-
         position: absolute;
-
+        z-index: 101;
         top: 68px;
-
         left: 0;
-
         right: 0;
-
         display: none;
-
         align-items: stretch;
-
         flex-direction: column;
-
         gap: 0;
-
         padding: 12px 24px 22px;
-
         background: var(--bg);
-
         border-bottom: 1px solid var(--line);
-
+        box-shadow: 0 16px 24px rgba(0,0,0,.16);
       }
 
       .nav.open {
-
         display: flex;
-
       }
 
       .nav a {
@@ -2233,38 +2221,43 @@
   <script>
 
     // Menú para celulares
-
     const menuToggle = document.getElementById("menu-toggle");
-
     const mainNav = document.getElementById("main-nav");
 
-    menuToggle.addEventListener("click", () => {
-
-      const isOpen = mainNav.classList.toggle("open");
-
-      menuToggle.setAttribute("aria-expanded", String(isOpen));
-
-      menuToggle.setAttribute("aria-label", isOpen ? "Cerrar menú" : "Abrir menú");
-
-      menuToggle.textContent = isOpen ? "×" : "☰";
-
-    });
-
-    mainNav.querySelectorAll("a").forEach(link => {
-
-      link.addEventListener("click", () => {
-
+    if (menuToggle && mainNav) {
+      const closeMenu = () => {
         mainNav.classList.remove("open");
-
         menuToggle.setAttribute("aria-expanded", "false");
-
         menuToggle.setAttribute("aria-label", "Abrir menú");
-
         menuToggle.textContent = "☰";
+      };
 
+      menuToggle.addEventListener("click", (event) => {
+        event.stopPropagation();
+        const isOpen = mainNav.classList.toggle("open");
+        menuToggle.setAttribute("aria-expanded", String(isOpen));
+        menuToggle.setAttribute("aria-label", isOpen ? "Cerrar menú" : "Abrir menú");
+        menuToggle.textContent = isOpen ? "×" : "☰";
       });
 
-    });
+      mainNav.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", closeMenu);
+      });
+
+      document.addEventListener("click", (event) => {
+        if (!mainNav.contains(event.target) && !menuToggle.contains(event.target)) {
+          closeMenu();
+        }
+      });
+
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") closeMenu();
+      });
+
+      window.addEventListener("resize", () => {
+        if (window.innerWidth > 650) closeMenu();
+      });
+    }
 
     // Tema claro / oscuro
 
