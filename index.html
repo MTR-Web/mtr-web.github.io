@@ -1660,7 +1660,103 @@
 
     }
 
-  </style>
+  
+    /* PORTADA REFINADA */
+    .hero {
+      min-height: 690px;
+      padding: 78px 0 38px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background:
+        radial-gradient(ellipse at 76% 45%, rgba(255,128,104,.09), transparent 34%),
+        linear-gradient(180deg, var(--bg), var(--bg));
+    }
+    .hero-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.02fr) minmax(380px, .98fr);
+      align-items: center;
+      gap: clamp(28px, 5vw, 76px);
+    }
+    .hero-content { max-width: 670px; position: relative; z-index: 2; }
+    .hero .eyebrow { display: inline-flex; align-items: center; gap: 10px; }
+    .hero-eyebrow-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--coral); box-shadow: 0 0 15px var(--coral); }
+    .hero h1 { font-size: clamp(3.1rem, 6.3vw, 6.15rem); margin: 25px 0 22px; line-height: .98; }
+    .hero-description { max-width: 520px; font-size: 1.02rem; line-height: 1.8; }
+    .hero-buttons { gap: 10px; }
+    .hero .button { border-radius: 5px; min-height: 52px; }
+    .hero .button-outline { border-color: var(--line); }
+    .hero-note { margin-top: 34px; font-size: .8rem; }
+    .hero-visual { min-height: 490px; position: relative; display: grid; place-items: center; isolation: isolate; }
+    .hero-visual::before {
+      content: ""; position: absolute; inset: 9% 3%;
+      background-image: linear-gradient(rgba(255,255,255,.045) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.045) 1px, transparent 1px);
+      background-size: 32px 32px; mask-image: radial-gradient(ellipse, #000 10%, transparent 74%); z-index: -2;
+    }
+    .hero-visual-orbit { position: absolute; border: 1px solid rgba(255,128,104,.17); border-radius: 50%; transform: rotate(-24deg); }
+    .orbit-one { width: 90%; height: 65%; }
+    .orbit-two { width: 108%; height: 78%; border-color: var(--line); transform: rotate(28deg); }
+    .hero-showcase {
+      position: relative; width: min(100%, 470px); min-height: 350px; overflow: hidden;
+      border: 1px solid rgba(255,255,255,.2); border-radius: 9px;
+      background: linear-gradient(140deg, #282522 0%, #171615 62%, #33201d 100%);
+      box-shadow: 0 35px 90px rgba(0,0,0,.28), 0 0 70px rgba(255,128,104,.08);
+      transform: rotate(-3deg); color: #f5f2eb;
+    }
+    .showcase-top { display:flex; align-items:center; gap:10px; min-height:48px; padding:0 16px; border-bottom:1px solid rgba(255,255,255,.14); font-size:.57rem; letter-spacing:.1em; color:#bcb7ae; }
+    .showcase-mark { display:grid; place-items:center; width:24px; height:24px; background:#ff8068; color:#171716; font-weight:700; border-radius:4px; font-size:.8rem; }
+    .showcase-status { margin-left:auto; color:#9dd8a8; font-size:.52rem; }
+    .showcase-main { padding: clamp(24px, 4vw, 42px); }
+    .showcase-kicker { color:#ff8068; font-size:.62rem; font-weight:700; letter-spacing:.18em; }
+    .showcase-headline { margin-top:20px; font:700 clamp(2.7rem, 5.5vw, 4.8rem)/.9 "Space Grotesk",sans-serif; letter-spacing:-.08em; }
+    .showcase-headline em { color:#ff8068; font-style:normal; }
+    .showcase-line { width:58px; height:3px; background:#ff8068; margin-top:26px; }
+    .showcase-bottom { display:flex; flex-wrap:wrap; justify-content:space-between; gap:8px; margin-top:25px; color:#bcb7ae; font-size:.52rem; letter-spacing:.08em; }
+    .showcase-side { position:absolute; right:15px; width:74px; height:74px; display:flex; flex-direction:column; justify-content:space-between; padding:10px; border:1px solid rgba(255,255,255,.2); background:rgba(24,23,22,.9); }
+    .showcase-side span { color:#aaa8a0; font-size:.53rem; letter-spacing:.1em; }
+    .showcase-side strong { font:600 1.6rem "Space Grotesk",sans-serif; }
+    .side-one { top:78px; transform:translateX(24px) rotate(8deg); }
+    .side-two { bottom:22px; right:25px; color:#ff8068; transform:translateX(25px) rotate(-8deg); }
+    .hero-floating-label { position:absolute; z-index:3; padding:11px 14px; border:1px solid var(--line); background:var(--surface); color:var(--muted); font-size:.58rem; letter-spacing:.1em; box-shadow:0 12px 35px rgba(0,0,0,.14); }
+    .hero-floating-label span { color:var(--coral); margin-right:7px; font-weight:700; }
+    .label-top { top:52px; left:-4px; transform:rotate(-4deg); }
+    .label-bottom { bottom:45px; right:-2px; transform:rotate(3deg); }
+    .label-bottom .label-cross { font-size:1rem; }
+    .hero-visual-index { position:absolute; right:0; top:42px; color:var(--muted); font:700 .7rem/1.4 "Space Grotesk",sans-serif; letter-spacing:.12em; text-align:right; }
+    .hero-visual-index span { font-size:.55rem; font-weight:400; }
+    .hero-bottomline { display:flex; justify-content:space-between; gap:16px; padding-top:32px; margin-top:34px; border-top:1px solid var(--line); color:var(--muted); font-size:.57rem; letter-spacing:.12em; }
+    .hero-bottomline span:last-child { color:var(--coral); }
+    @media (max-width: 900px) {
+      .hero-layout { grid-template-columns: 1fr; gap: 18px; }
+      .hero-content { max-width: 760px; }
+      .hero-visual { min-height: 420px; }
+      .hero-showcase { width:min(82%, 470px); }
+      .hero-bottomline { margin-top:20px; }
+    }
+    @media (max-width: 600px) {
+      .hero { padding-top:56px; }
+      .hero h1 { font-size:clamp(3rem, 13vw, 4.7rem); }
+      .hero-visual { min-height:350px; margin:0 -8px; }
+      .hero-showcase { width:82%; min-height:300px; }
+      .showcase-main { padding:26px 22px; }
+      .showcase-headline { font-size:clamp(2.7rem, 12vw, 3.7rem); }
+      .showcase-side { width:58px; height:60px; right:8px; }
+      .side-one { top:72px; }
+      .side-two { bottom:16px; }
+      .label-top { left:0; top:22px; }
+      .label-bottom { bottom:20px; right:0; }
+      .hero-visual-index { top:12px; right:2px; }
+      .hero-bottomline { flex-wrap:wrap; font-size:.52rem; gap:9px 16px; }
+      .hero-bottomline span:nth-child(2) { display:none; }
+    }
+    @media (prefers-reduced-motion: no-preference) {
+      .hero-showcase { animation: showcase-float 7s ease-in-out infinite; }
+      @keyframes showcase-float { 0%,100% { transform:translateY(0) rotate(-3deg); } 50% { transform:translateY(-8px) rotate(-2deg); } }
+    }
+    body.light .hero-visual::before { background-image:linear-gradient(rgba(0,0,0,.055) 1px, transparent 1px),linear-gradient(90deg,rgba(0,0,0,.055) 1px,transparent 1px); }
+    body.light .hero-showcase { box-shadow:0 35px 90px rgba(0,0,0,.12),0 0 70px rgba(255,128,104,.1); }
+
+</style>
 
 </head>
 
@@ -1707,43 +1803,43 @@
   <main>
 
     <!-- PORTADA -->
-
     <section class="hero" id="inicio">
-
-      <div class="container">
-
+      <div class="container hero-layout">
         <div class="hero-content">
-
-          <span class="eyebrow">DISEÑO WEB & SOLUCIONES DIGITALES</span>
-
-          <h1>Ideas que se convierten en <span>experiencias.</span></h1>
-
+          <span class="eyebrow"><span class="hero-eyebrow-dot"></span> ESTUDIO DIGITAL INDEPENDIENTE</span>
+          <h1>Diseñamos lo que tu marca <span>puede llegar a ser.</span></h1>
           <p class="hero-description">
-
-            Diseñamos sitios web modernos, funcionales y atractivos para emprendedores y negocios que quieren destacar en internet.
-
+            Creamos sitios web con personalidad, pensados para mostrar el valor de tu negocio y convertir visitas en oportunidades.
           </p>
-
           <div class="hero-buttons">
-
-            <a class="button" href="#proyectos">Ver proyectos <span>↗</span></a>
-
-            <a class="button button-outline" href="#contacto">Hablemos</a>
-
+            <a class="button" href="#proyectos">Explorar proyectos <span>↗</span></a>
+            <a class="button button-outline" href="#contacto">Hablemos de tu idea</a>
           </div>
-
           <div class="hero-note">
-
             <span class="status-dot"></span>
-
-            <span>Diseño creativo. Soluciones a medida.</span>
-
+            <span>Diseño cuidado. Experiencias útiles. Hechas para cada marca.</span>
           </div>
-
         </div>
-
+        <div class="hero-visual" aria-label="Composición visual de proyectos digitales de MTR Studio">
+          <div class="hero-visual-orbit orbit-one"></div>
+          <div class="hero-visual-orbit orbit-two"></div>
+          <div class="hero-floating-label label-top"><span>01</span> ESTRATEGIA + DISEÑO</div>
+          <div class="hero-showcase">
+            <div class="showcase-top"><span class="showcase-mark">M</span><span>MTR / DIGITAL STUDIO</span><span class="showcase-status">● LIVE CONCEPT</span></div>
+            <div class="showcase-main">
+              <span class="showcase-kicker">MAKE IT MATTER</span>
+              <div class="showcase-headline">Ideas con<br><em>presencia.</em></div>
+              <div class="showcase-line"></div>
+              <div class="showcase-bottom"><span>DISEÑO WEB</span><span>IDENTIDAD DIGITAL</span><span>2026 ↗</span></div>
+            </div>
+            <div class="showcase-side side-one"><span>WEB</span><strong>01</strong></div>
+            <div class="showcase-side side-two"><span>IDEAS</span><strong>∞</strong></div>
+          </div>
+          <div class="hero-floating-label label-bottom"><span class="label-cross">✳</span> DE LA IDEA A LA WEB</div>
+          <div class="hero-visual-index">MTR<br><span>STUDIO®</span></div>
+        </div>
       </div>
-
+      <div class="hero-bottomline container"><span>DISEÑO CON INTENCIÓN</span><span>BUENAS IDEAS, MEJOR EJECUCIÓN</span><span>BUENOS SITIOS EMPIEZAN CON UNA IDEA ↘</span></div>
     </section>
 
     <!-- SERVICIOS -->
