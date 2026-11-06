@@ -1,143 +1,94 @@
-// Menú para celulares
-    const menuToggle = document.getElementById("menu-toggle");
-    const mainNav = document.getElementById("main-nav");
 
-    if (menuToggle && mainNav) {
-      const closeMenu = () => {
-        mainNav.classList.remove("open");
-        menuToggle.setAttribute("aria-expanded", "false");
-        menuToggle.setAttribute("aria-label", "Abrir menú");
-        menuToggle.textContent = "☰";
-      };
+/*
+  MTR Studio — configuración inicial
+  WhatsApp: código de país + número, solo dígitos. Argentina: 549 + área + número.
+  Email: dirección donde querés recibir consultas.
+*/
+const MTR_CONFIG = {
+  whatsapp: "5491163547356",
+  email: "mtrstudio.webs@gmail.com"
+};
 
-      menuToggle.addEventListener("click", (event) => {
-        event.stopPropagation();
-        const isOpen = mainNav.classList.toggle("open");
-        menuToggle.setAttribute("aria-expanded", String(isOpen));
-        menuToggle.setAttribute("aria-label", isOpen ? "Cerrar menú" : "Abrir menú");
-        menuToggle.textContent = isOpen ? "×" : "☰";
-      });
+document.getElementById("year").textContent = new Date().getFullYear();
 
-      mainNav.querySelectorAll("a").forEach((link) => {
-        link.addEventListener("click", closeMenu);
-      });
+// Modo claro/oscuro. Guarda la preferencia en este navegador.
+const themeToggle = document.querySelector(".theme-toggle");
+const themeIcon = document.querySelector(".theme-icon");
+const themeLabel = document.querySelector(".theme-label");
 
-      document.addEventListener("click", (event) => {
-        if (!mainNav.contains(event.target) && !menuToggle.contains(event.target)) {
-          closeMenu();
-        }
-      });
+function applyTheme(theme) {
+  const dark = theme === "dark";
+  document.body.classList.toggle("dark-mode", dark);
+  themeIcon.textContent = dark ? "☀" : "☾";
+  themeLabel.textContent = dark ? "Modo claro" : "Modo oscuro";
+  themeToggle.setAttribute("aria-label", dark ? "Activar modo claro" : "Activar modo oscuro");
+  try { localStorage.setItem("mtr-studio-theme", theme); } catch (error) {}
+}
 
-      document.addEventListener("keydown", (event) => {
-        if (event.key === "Escape") closeMenu();
-      });
+let savedTheme = "light";
+try { savedTheme = localStorage.getItem("mtr-studio-theme") || "light"; } catch (error) {}
+applyTheme(savedTheme);
+themeToggle.addEventListener("click", () => {
+  applyTheme(document.body.classList.contains("dark-mode") ? "light" : "dark");
+});
 
-      window.addEventListener("resize", () => {
-        if (window.innerWidth > 650) closeMenu();
-      });
-    }
+const menuToggle = document.querySelector(".menu-toggle");
+const nav = document.querySelector(".nav");
+menuToggle.addEventListener("click", () => {
+  const isOpen = nav.classList.toggle("open");
+  menuToggle.setAttribute("aria-expanded", String(isOpen));
+  menuToggle.setAttribute("aria-label", isOpen ? "Cerrar menú" : "Abrir menú");
+  menuToggle.textContent = isOpen ? "×" : "☰";
+});
+nav.querySelectorAll("a").forEach(link => link.addEventListener("click", () => {
+  nav.classList.remove("open");
+  menuToggle.setAttribute("aria-expanded", "false");
+  menuToggle.textContent = "☰";
+}));
 
-    // Tema claro / oscuro
-
-    const themeToggle = document.getElementById("theme-toggle");
-
-    themeToggle.addEventListener("click", () => {
-
-      document.body.classList.toggle("light");
-
-      const lightMode = document.body.classList.contains("light");
-
-      themeToggle.setAttribute("aria-label", lightMode ? "Activar tema oscuro" : "Activar tema claro");
-
-    });
-
-    // Año del footer
-
-    document.getElementById("year").textContent = new Date().getFullYear();
-
-    // Formulario: copia el mensaje y muestra el correo de contacto.
-
-    // Reemplazá este correo por el correo real de MTR Studio.
-
-    const CONTACT_EMAIL = "mtrstudio.webs@gmail.com";
-
-    const contactEmailLink = document.getElementById("contact-email-link");
-
-    const formStatus = document.getElementById("form-status");
-
-    contactEmailLink.textContent = CONTACT_EMAIL;
-
-    contactEmailLink.href = "mailto:" + CONTACT_EMAIL;
-
-    document.getElementById("contact-form").addEventListener("submit", async event => {
-
+const whatsappLink = document.getElementById("whatsapp-link");
+function updateWhatsAppLink() {
+  const configured = MTR_CONFIG.whatsapp.trim();
+  if (configured) {
+    whatsappLink.href = `https://wa.me/${configured}?text=${encodeURIComponent("Hola, vi la web de MTR Studio y quiero consultar por un proyecto.")}`;
+    whatsappLink.removeAttribute("aria-disabled");
+  } else {
+    whatsappLink.href = "#contacto";
+    whatsappLink.addEventListener("click", event => {
       event.preventDefault();
-
-      const form = event.currentTarget;
-
-      const data = new FormData(form);
-
-      const message =
-
-        "Consulta desde MTR Studio\n\n" +
-
-        "Nombre: " + data.get("name") + "\n" +
-
-        "Correo: " + data.get("email") + "\n" +
-
-        "Consulta: " + data.get("subject") + "\n\n" +
-
-        "Mensaje:\n" + data.get("message");
-
-      try {
-
-        await navigator.clipboard.writeText(message);
-
-        formStatus.innerHTML =
-
-          "Tu mensaje ha sido guardado. Copiamos el texto para que puedas enviarlo a: " +
-
-          '<a href="mailto:' + CONTACT_EMAIL + '">' + CONTACT_EMAIL + "</a>";
-
-        formStatus.classList.add("visible");
-
-      } catch (error) {
-
-        formStatus.textContent =
-
-          "No pudimos copiar automáticamente el mensaje. Seleccioná y copiá los datos del formulario y escribinos a " + CONTACT_EMAIL + ".";
-
-        formStatus.classList.add("visible");
-
-      }
-
+      document.getElementById("form-status").textContent = "Para activar WhatsApp, agregá tu número en MTR_CONFIG dentro de script.js.";
     });
+  }
+}
+updateWhatsAppLink();
 
-    // WhatsApp: reemplazá el número de ejemplo por el tuyo,
+document.getElementById("contact-form").addEventListener("submit", async event => {
+  event.preventDefault();
+  const form = event.currentTarget;
+  const data = new FormData(form);
+  const name = String(data.get("name") || "").trim();
+  const email = String(data.get("email") || "").trim();
+  const service = String(data.get("service") || "").trim();
+  const message = String(data.get("message") || "").trim();
+  const status = document.getElementById("form-status");
 
-    // incluyendo el código de país y de área, sin + ni espacios.
+  if (!MTR_CONFIG.email.trim()) {
+    status.textContent = "El formulario todavía no está configurado. Agregá el correo de MTR Studio en MTR_CONFIG dentro de script.js.";
+    return;
+  }
 
-    const WHATSAPP_NUMBER = "5491132185989";
+  const fullMessage = `Consulta para MTR Studio
 
-    const whatsappLink = document.getElementById("whatsapp-link");
+Nombre: ${name}
+Correo: ${email}
+Servicio: ${service}
 
-    if (WHATSAPP_NUMBER) {
-
-      whatsappLink.href = "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent("Hola, vi la web de MTR Studio y quiero consultar por un proyecto.");
-
-      whatsappLink.target = "_blank";
-
-      whatsappLink.rel = "noopener noreferrer";
-
-    } else {
-
-      whatsappLink.href = "#contacto";
-
-    }
-
-    // Abre el correo con la consulta ya escrita, además de copiarla.
-    document.getElementById("contact-form").addEventListener("submit", event => {
-      const d = new FormData(event.currentTarget);
-      const body = "Hola, soy " + d.get("name") + " (" + d.get("email") + ").\n\nMe interesa: " + d.get("subject") + "\n\n" + d.get("message");
-      window.location.href = "mailto:" + CONTACT_EMAIL + "?subject=" + encodeURIComponent("Consulta desde MTR Studio: " + d.get("subject")) + "&body=" + encodeURIComponent(body);
-    });
+Mensaje:
+${message}`;
+  try {
+    await navigator.clipboard.writeText(fullMessage);
+    status.textContent = `Tu mensaje fue copiado. Para enviarlo, escribí a ${MTR_CONFIG.email.trim()} y pegalo en el correo. No se envió ni se guardó en un servidor.`;
+  } catch (error) {
+    status.textContent = `No se pudo copiar automáticamente. Copiá estos datos y envialos a ${MTR_CONFIG.email.trim()}: ${fullMessage}`;
+  }
+});
