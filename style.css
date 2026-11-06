@@ -1526,3 +1526,43 @@ button {
     transform: none;
   }
 }
+
+
+/* THEME SWITCH */
+.theme-toggle {
+  width: 38px; height: 38px; display: grid; place-items: center;
+  border: 1px solid var(--line); border-radius: 50%;
+  background: transparent; color: var(--ink); font-size: 17px;
+  transition: background var(--transition), color var(--transition), transform var(--transition);
+}
+.theme-toggle:hover { transform: rotate(18deg); border-color: var(--accent); }
+
+:root[data-theme="dark"] {
+  --bg: #171816; --surface: #222421; --ink: #f5f3ee;
+  --muted: #aaa9a2; --line: #393a36; --dark: #f0eee8;
+  --dark-muted: #777872; --accent: #ff705d; --lime: #c9ef70;
+}
+:root[data-theme="dark"] .header { background: rgba(23,24,22,.94); }
+:root[data-theme="dark"] .hero::before { color: rgba(245,243,238,.025); }
+:root[data-theme="dark"] .visual-orbit,
+:root[data-theme="dark"] .orbit-one::before,
+:root[data-theme="dark"] .orbit-two::before { border-color: #41423e; }
+:root[data-theme="dark"] .service-card { background: rgba(255,255,255,.025); }
+:root[data-theme="dark"] .service-card:hover { background: #222421; }
+:root[data-theme="dark"] .audience,
+:root[data-theme="dark"] .faq { background: #20211e; }
+:root[data-theme="dark"] .audience-list,
+:root[data-theme="dark"] .audience-list > div,
+:root[data-theme="dark"] .faq-item { border-color: #41423e; }
+:root[data-theme="dark"] .project-category { background: #222421; color: #f5f3ee; }
+:root[data-theme="dark"] .project-image { background: linear-gradient(135deg,#343d32,#242a22); }
+:root[data-theme="dark"] .project-fallback { color: rgba(245,243,238,.25); }
+:root[data-theme="dark"] .filter-button:hover,
+:root[data-theme="dark"] .filter-button.active { background: #f5f3ee; color: #171816; border-color: #f5f3ee; }
+:root[data-theme="dark"] .button-primary { background: #f5f3ee; color: #171816; }
+:root[data-theme="dark"] .button-primary:hover { background: var(--accent); }
+:root[data-theme="dark"] .header-cta:hover { background: #f5f3ee; color: #171816; }
+@media (max-width:700px) {
+  .theme-toggle { margin-left: auto; }
+  :root[data-theme="dark"] .navigation { background: var(--bg); }
+}
