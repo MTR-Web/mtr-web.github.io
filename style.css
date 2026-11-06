@@ -1566,3 +1566,19 @@ button {
   .theme-toggle { margin-left: auto; }
   :root[data-theme="dark"] .navigation { background: var(--bg); }
 }
+
+/* DARK THEME CONTRAST FIX */
+:root[data-theme="dark"] .process,
+:root[data-theme="dark"] .contact,
+:root[data-theme="dark"] .footer {
+  background: #111210;
+  color: #f5f3ee;
+}
+:root[data-theme="dark"] .process-step p,
+:root[data-theme="dark"] .contact-copy > p { color: #aaa9a2; }
+:root[data-theme="dark"] .contact-form label { color: #d0d0ca; }
+:root[data-theme="dark"] .contact-form input,
+:root[data-theme="dark"] .contact-form textarea { color: #f5f3ee; }
+:root[data-theme="dark"] .button-secondary { color: var(--ink); }
+:root[data-theme="dark"] .menu-toggle span { background: var(--ink); }
+:root[data-theme="dark"] .theme-toggle { color: var(--ink); }
