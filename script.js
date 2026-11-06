@@ -4,7 +4,7 @@
   Email: dirección donde querés recibir consultas.
 */
 const MTR_CONFIG = {
-  whatsapp: "5491163547356",
+  whatsapp: "5491132185989",
   email: "mtrstudio.webs@gmail.com"
 };
 
