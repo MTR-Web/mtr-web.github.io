@@ -756,3 +756,50 @@ githubLinks.forEach(link => {
 console.info(
   "MTR Studio | Sitio inicializado correctamente."
 );
+
+
+/* -----------------------------------------------------
+   TEMA CLARO / OSCURO
+   ----------------------------------------------------- */
+
+const themeToggle = $(".theme-toggle");
+const themeMeta = $("#theme-color-meta");
+const root = document.documentElement;
+
+function setTheme(theme) {
+  root.dataset.theme = theme;
+  const dark = theme === "dark";
+
+  if (themeToggle) {
+    themeToggle.setAttribute("aria-pressed", String(dark));
+    themeToggle.setAttribute(
+      "aria-label",
+      dark ? "Cambiar a tema claro" : "Cambiar a tema oscuro"
+    );
+    themeToggle.textContent = dark ? "☼" : "◐";
+  }
+
+  if (themeMeta) {
+    themeMeta.setAttribute("content", dark ? "#171816" : "#f5f3ee");
+  }
+}
+
+if (themeToggle) {
+  const savedTheme = (() => {
+    try { return localStorage.getItem("mtr-theme"); }
+    catch (_) { return null; }
+  })();
+
+  const systemDark = window.matchMedia &&
+    window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+  setTheme(savedTheme || (systemDark ? "dark" : "light"));
+
+  themeToggle.addEventListener("click", () => {
+    const next = root.dataset.theme === "dark" ? "light" : "dark";
+    setTheme(next);
+
+    try { localStorage.setItem("mtr-theme", next); }
+    catch (_) { /* La página sigue funcionando sin storage. */ }
+  });
+}
