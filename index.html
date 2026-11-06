@@ -1,152 +1,726 @@
-# Cambios para index.html (MTR Studio)
+<!DOCTYPE html>
 
-Cómo aplicarlos: en GitHub abrí `index.html` → lápiz (Edit) → buscá cada texto "ANTES" con Ctrl+F y reemplazalo por "DESPUÉS" → Commit changes. Son 19 cambios chicos; el diseño no se toca.
+<html lang="es">
 
----
+<head>
 
-## 1. Portada (textos más concretos)
+  <meta charset="UTF-8">
 
-**1.1 Título**
-```
-ANTES:   <h1>Diseñamos lo que tu marca <span>puede llegar a ser.</span></h1>
-DESPUÉS: <h1>Sitios web que hacen que tu negocio <span>se note.</span></h1>
-```
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-**1.2 Descripción**
-```
-ANTES:   Creamos sitios web con personalidad, pensados para mostrar el valor de tu negocio y convertir visitas en oportunidades.
-DESPUÉS: Diseñamos páginas web a medida para emprendedores y negocios: claras, rápidas en el celular y pensadas para que tus clientes te escriban.
-```
+  <meta name="description" content="MTR Studio: diseño web a medida para emprendedores y negocios. Sitios claros, rápidos en el celular y pensados para que tus clientes te contacten.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_AR">
+  <meta property="og:title" content="MTR Studio | Diseño web &amp; soluciones digitales">
+  <meta property="og:description" content="Sitios web a medida para emprendedores y negocios. Mirá los proyectos y pedí tu presupuesto.">
+  <meta property="og:url" content="https://mtr-web.github.io/">
+  <meta property="og:image" content="https://mtr-web.github.io/logo-mtr.png">
+  <meta name="twitter:card" content="summary">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23ff8068'/%3E%3Ctext x='32' y='46' font-size='38' font-weight='700' text-anchor='middle' font-family='Arial' fill='%23171716'%3EM%3C/text%3E%3C/svg%3E">
 
-**1.3 Botón principal (ahora lleva a contacto)**
-```
-ANTES:   <a class="button" href="#proyectos">Explorar proyectos <span>↗</span></a>
-DESPUÉS: <a class="button" href="#contacto">Pedí tu presupuesto <span>↗</span></a>
-```
+  <meta name="theme-color" content="#171716">
 
-**1.4 Botón secundario**
-```
-ANTES:   <a class="button button-outline" href="#contacto">Hablemos de tu idea</a>
-DESPUÉS: <a class="button button-outline" href="#proyectos">Ver proyectos</a>
-```
+  <title>MTR Studio | Diseño web & soluciones digitales</title>
 
-**1.5 Franja inferior (saca frases repetidas)**
-```
-ANTES:   <span>DISEÑO CON INTENCIÓN</span><span>BUENAS IDEAS, MEJOR EJECUCIÓN</span><span>BUENOS SITIOS EMPIEZAN CON UNA IDEA ↘</span>
-DESPUÉS: <span>DISEÑO A MEDIDA</span><span>PENSADO PARA CELULARES</span><span>CONTANOS TU IDEA ↘</span>
-```
+  <link rel="preconnect" href="https://fonts.googleapis.com">
 
-## 2. Servicios (ajustalos a lo que realmente ofrecés)
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-**2.1**
-```
-ANTES:   <p>Sitios modernos, adaptables a celulares y computadoras, con una identidad visual coherente con tu negocio.</p>
-DESPUÉS: <p>Sitios a medida, rápidos y adaptables a celulares y computadoras. Incluyen las secciones que necesitás, formulario de contacto y botón de WhatsApp.</p>
-```
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-**2.2**
-```
-ANTES:   <p>Diseño visual y recursos digitales para que tu marca tenga una presencia clara y reconocible.</p>
-DESPUÉS: <p>Paleta, tipografías y piezas visuales para que tu marca se vea coherente en tu web y en tus redes.</p>
-```
+  <link rel="stylesheet" href="style.css">
 
-**2.3 Título**
-```
-ANTES:   <h3>Soluciones a medida</h3>
-DESPUÉS: <h3>Herramientas web a medida</h3>
-```
+</head>
 
-**2.4 Texto**
-```
-ANTES:   <p>Herramientas y experiencias digitales pensadas según las necesidades de cada proyecto.</p>
-DESPUÉS: <p>Catálogos con filtros, cartas digitales, reservas, paneles y otras herramientas según lo que necesite tu negocio.</p>
-```
+<body>
 
-## 3. Proyectos (aclara que son conceptuales)
+  <header class="header">
 
-```
-ANTES:   <p>Una selección de experiencias digitales para diferentes ideas, marcas y necesidades.</p>
-DESPUÉS: <p>Proyectos conceptuales que muestran cómo puede verse y funcionar tu sitio, cada uno pensado para un rubro distinto.</p>
-```
+    <div class="container header-inner">
 
-## 4. Nosotros (suma el proceso)
+      <a class="brand" href="#inicio" aria-label="MTR Studio, inicio">
 
-```
-ANTES:   <p>Cada proyecto es una oportunidad para transformar una idea en una experiencia digital concreta.</p>
-DESPUÉS: <p>Trabajamos en tres pasos: conversamos sobre tu negocio, te presentamos una propuesta de diseño y publicamos tu sitio listo para usar.</p>
-```
+        <span class="brand-mark-image"><img src="https://mtr-web.github.io/logo-mtr.png" alt="Logo MTR Studio"></span>
 
-## 5. Contacto (voz plural y WhatsApp visible)
+        <span>MTR Studio</span>
 
-**5.1**
-```
-ANTES:   <p>Contame qué tenés en mente. Podemos conversar sobre tu proyecto y encontrar una solución que se adapte a lo que necesitás.</p>
-DESPUÉS: <p>Contanos qué tenés en mente. Podemos conversar sobre tu proyecto y encontrar una solución que se adapte a lo que necesitás.</p>
-```
+      </a>
 
-**5.2 Bloque "Respuesta" → WhatsApp** (dos líneas seguidas)
-```
-ANTES:   <span>Respuesta</span>
-DESPUÉS: <span>WhatsApp</span>
+      <nav class="nav" id="main-nav" aria-label="Navegación principal">
 
-ANTES:   <p>Podés dejar tu consulta mediante el formulario.</p>
-DESPUÉS: <a href="https://wa.me/5491163547356?text=Hola%2C%20vi%20la%20web%20de%20MTR%20Studio%20y%20quiero%20consultar%20por%20un%20proyecto." target="_blank" rel="noopener noreferrer">Escribinos por WhatsApp ↗</a>
-```
+        <a href="#inicio">Inicio</a>
 
-**5.3 Formulario**
-```
-ANTES:   <label for="message">Contame sobre tu proyecto</label>
-DESPUÉS: <label for="message">Contanos sobre tu proyecto</label>
+        <a href="#servicios">Servicios</a>
 
-ANTES:   Preparar mensaje <span>↗</span>
-DESPUÉS: Enviar consulta <span>↗</span>
-```
+        <a href="#proyectos">Proyectos</a>
 
-## 6. Compartir en redes y favicon
+        <a href="#nosotros">Nosotros</a>
 
-Reemplazá esta línea del `<head>`:
-```
-<meta name="description" content="MTR Studio: diseño web y soluciones digitales para emprendedores y negocios.">
-```
-por este bloque:
-```
-<meta name="description" content="MTR Studio: diseño web a medida para emprendedores y negocios. Sitios claros, rápidos en el celular y pensados para que tus clientes te contacten.">
-<meta property="og:type" content="website">
-<meta property="og:locale" content="es_AR">
-<meta property="og:title" content="MTR Studio | Diseño web &amp; soluciones digitales">
-<meta property="og:description" content="Sitios web a medida para emprendedores y negocios. Mirá los proyectos y pedí tu presupuesto.">
-<meta property="og:url" content="https://mtr-web.github.io/">
-<meta property="og:image" content="https://mtr-web.github.io/logo-mtr.png">
-<meta name="twitter:card" content="summary">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23ff8068'/%3E%3Ctext x='32' y='46' font-size='38' font-weight='700' text-anchor='middle' font-family='Arial' fill='%23171716'%3EM%3C/text%3E%3C/svg%3E">
-```
+        <a href="#contacto">Contacto</a>
 
-## 7. Arreglo de celular (4 proyectos sin el padding responsive)
+      </nav>
 
-En el CSS, dentro de `@media (max-width: 650px)`:
-```
-ANTES:   .restaurant-content, .pulseboard-content {
-DESPUÉS: .restaurant-content, .pulseboard-content, .blackline-content, .arcade-bistro-content, .garage-x-content, .fuego-fest-content {
-```
+      <div class="header-actions">
 
-## 8. JavaScript
+        <button class="icon-button" id="theme-toggle" type="button" aria-label="Cambiar tema" title="Cambiar tema">◐</button>
 
-**8.1 WhatsApp flotante con mensaje prearmado**
-```
-ANTES:   whatsappLink.href = "https://wa.me/" + WHATSAPP_NUMBER;
-DESPUÉS: whatsappLink.href = "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent("Hola, vi la web de MTR Studio y quiero consultar por un proyecto.");
-```
+        <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="main-nav">☰</button>
 
-**8.2 El formulario abre el correo ya escrito** (además de copiar el texto). Antes del `</script>` final, pegá:
-```
-// Abre el correo con la consulta ya escrita (además de copiarla)
-document.getElementById("contact-form").addEventListener("submit", event => {
-  const d = new FormData(event.currentTarget);
-  const body = "Hola, soy " + d.get("name") + " (" + d.get("email") + ").\n\nMe interesa: " + d.get("subject") + "\n\n" + d.get("message");
-  window.location.href = "mailto:" + CONTACT_EMAIL + "?subject=" + encodeURIComponent("Consulta desde MTR Studio: " + d.get("subject")) + "&body=" + encodeURIComponent(body);
-});
-```
+      </div>
 
-## 9. Limpieza del repo
+    </div>
 
-Borrá `script.js` y `style.css`: `index.html` no los usa (tiene su CSS y JS adentro) y son restos de una versión anterior. Si algún día los enlazaras, `script.js` daría errores porque busca elementos que ya no existen.
+  </header>
+
+  <main>
+
+    <!-- PORTADA -->
+    <section class="hero" id="inicio">
+      <div class="container hero-layout">
+        <div class="hero-content">
+          <span class="eyebrow"><span class="hero-eyebrow-dot"></span> ESTUDIO DIGITAL INDEPENDIENTE</span>
+          <h1>Sitios web que hacen que tu negocio <span>se note.</span></h1>
+          <p class="hero-description">
+            Diseñamos páginas web a medida para emprendedores y negocios: claras, rápidas en el celular y pensadas para que tus clientes te escriban.
+          </p>
+          <div class="hero-buttons">
+            <a class="button" href="#contacto">Pedí tu presupuesto <span>↗</span></a>
+            <a class="button button-outline" href="#proyectos">Ver proyectos</a>
+          </div>
+          <div class="hero-note">
+            <span class="status-dot"></span>
+            <span>Diseño cuidado. Experiencias útiles. Hechas para cada marca.</span>
+          </div>
+        </div>
+        <div class="hero-visual" aria-label="Composición visual de proyectos digitales de MTR Studio">
+          <div class="hero-visual-orbit orbit-one"></div>
+          <div class="hero-visual-orbit orbit-two"></div>
+          <div class="hero-floating-label label-top"><span>01</span> ESTRATEGIA + DISEÑO</div>
+          <div class="hero-showcase">
+            <div class="showcase-top"><span class="showcase-mark">M</span><span>MTR / DIGITAL STUDIO</span><span class="showcase-status">● LIVE CONCEPT</span></div>
+            <div class="showcase-main">
+              <span class="showcase-kicker">MAKE IT MATTER</span>
+              <div class="showcase-headline">Ideas con<br><em>presencia.</em></div>
+              <div class="showcase-line"></div>
+              <div class="showcase-bottom"><span>DISEÑO WEB</span><span>IDENTIDAD DIGITAL</span><span>2026 ↗</span></div>
+            </div>
+            <div class="showcase-side side-one"><span>WEB</span><strong>01</strong></div>
+            <div class="showcase-side side-two"><span>IDEAS</span><strong>∞</strong></div>
+          </div>
+          <div class="hero-floating-label label-bottom"><span class="label-cross">✳</span> DE LA IDEA A LA WEB</div>
+          <div class="hero-visual-index">MTR<br><span>STUDIO®</span></div>
+        </div>
+      </div>
+      <div class="hero-bottomline container"><span>DISEÑO A MEDIDA</span><span>PENSADO PARA CELULARES</span><span>CONTANOS TU IDEA ↘</span></div>
+    </section>
+
+    <!-- SERVICIOS -->
+
+    <section class="services section" id="servicios">
+
+      <div class="container">
+
+        <div class="section-heading">
+
+          <span class="eyebrow">01 — SERVICIOS</span>
+
+          <h2>Soluciones digitales <span class="muted">para crecer.</span></h2>
+
+          <p>Creamos experiencias pensadas para comunicar mejor tu propuesta y conectar con tus clientes.</p>
+
+        </div>
+
+        <div class="services-grid">
+
+          <article class="service-card">
+
+            <span class="service-number">01 / WEB</span>
+
+            <h3>Diseño web</h3>
+
+            <p>Sitios a medida, rápidos y adaptables a celulares y computadoras. Incluyen las secciones que necesitás, formulario de contacto y botón de WhatsApp.</p>
+
+          </article>
+
+          <article class="service-card">
+
+            <span class="service-number">02 / BRANDING</span>
+
+            <h3>Identidad digital</h3>
+
+            <p>Paleta, tipografías y piezas visuales para que tu marca se vea coherente en tu web y en tus redes.</p>
+
+          </article>
+
+          <article class="service-card">
+
+            <span class="service-number">03 / DIGITAL</span>
+
+            <h3>Herramientas web a medida</h3>
+
+            <p>Catálogos con filtros, cartas digitales, reservas, paneles y otras herramientas según lo que necesite tu negocio.</p>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- PROYECTOS -->
+
+    <section class="section" id="proyectos">
+
+      <div class="container">
+
+        <div class="section-heading">
+
+          <span class="eyebrow">02 — PORTFOLIO</span>
+
+          <h2>Proyectos <span class="muted">seleccionados.</span></h2>
+
+          <p>Proyectos conceptuales que muestran cómo puede verse y funcionar tu sitio, cada uno pensado para un rubro distinto.</p>
+
+        </div>
+
+        <div class="project-grid">
+
+          <!-- NÉBULA -->
+
+          <article class="project-card">
+
+            <a class="project nebula"
+
+               href="https://mtr-web.github.io/EJEMPLO-Pagina-descubrimiento-de-series./"
+
+               target="_blank" rel="noopener noreferrer"
+
+               aria-label="Visitar el proyecto Nébula">
+
+              <div class="project-browser"><span></span><span></span><span></span></div>
+
+              <div class="nebula-content">
+
+                <span class="project-tag">ENTRETENIMIENTO</span>
+
+                <h3>Nébula<span>.</span></h3>
+
+                <p>Tu próximo universo empieza acá.</p>
+
+                <div class="nebula-shows">
+
+                  <div class="show-card show-one">SERIES</div>
+
+                  <div class="show-card show-two">CINE</div>
+
+                  <div class="show-card show-three">EXPLORAR</div>
+
+                </div>
+
+              </div>
+
+            </a>
+
+            <div class="project-info">
+
+              <div>
+
+                <h3>Nébula</h3>
+
+                <p>Descubrimiento de series</p>
+
+              </div>
+
+              <a class="project-arrow"
+
+                 href="https://mtr-web.github.io/EJEMPLO-Pagina-descubrimiento-de-series./"
+
+                 target="_blank" rel="noopener noreferrer" aria-label="Abrir Nébula">↗</a>
+
+            </div>
+
+          </article>
+
+          <!-- IMPULSO FITNESS -->
+
+          <article class="project-card">
+
+            <a class="project impulso"
+
+               href="https://mtr-web.github.io/EJEMPLO-Pagina-gimansio./"
+
+               target="_blank" rel="noopener noreferrer"
+
+               aria-label="Visitar Impulso Fitness">
+
+              <div class="project-browser"><span></span><span></span><span></span></div>
+
+              <div class="impulso-content">
+
+                <span class="project-tag">FITNESS & BIENESTAR</span>
+
+                <h3>IMPULSO<span>.</span></h3>
+
+                <p>Superá tus propios límites.</p>
+
+                <div class="impulso-bottom">
+
+                  <span>FUERZA</span>
+
+                  <span>DISCIPLINA</span>
+
+                  <span>PROGRESO</span>
+
+                </div>
+
+              </div>
+
+            </a>
+
+            <div class="project-info">
+
+              <div>
+
+                <h3>Impulso Fitness</h3>
+
+                <p>Web para gimnasio</p>
+
+              </div>
+
+              <a class="project-arrow"
+
+                 href="https://mtr-web.github.io/EJEMPLO-Pagina-gimansio./"
+
+                 target="_blank" rel="noopener noreferrer" aria-label="Abrir Impulso Fitness">↗</a>
+
+            </div>
+
+          </article>
+
+          <!-- RESTAURANTE -->
+
+          <article class="project-card">
+
+            <a class="project restaurant"
+
+               href="https://mtr-web.github.io/EJEMPLO-P-gina-de-restaurante./"
+
+               target="_blank" rel="noopener noreferrer"
+
+               aria-label="Visitar la página de restaurante">
+
+              <div class="project-browser"><span></span><span></span><span></span></div>
+
+              <div class="restaurant-content">
+
+                <span class="project-tag">GASTRONOMÍA</span>
+
+                <h3>Buon<span>Gusto.</span></h3>
+
+                <p>Una experiencia para disfrutar.</p>
+
+                <div class="restaurant-menu">
+
+                  <span>MENÚ</span>
+
+                  <span>ESPECIALIDADES</span>
+
+                  <span>RESERVAS</span>
+
+                </div>
+
+              </div>
+
+            </a>
+
+            <div class="project-info">
+
+              <div>
+
+                <h3>Restaurante</h3>
+
+                <p>Web gastronómica</p>
+
+              </div>
+
+              <a class="project-arrow"
+
+                 href="https://mtr-web.github.io/EJEMPLO-P-gina-de-restaurante./"
+
+                 target="_blank" rel="noopener noreferrer" aria-label="Abrir restaurante">↗</a>
+
+            </div>
+
+          </article>
+
+          <!-- PULSEBOARD -->
+
+          <article class="project-card">
+
+            <a class="project pulseboard"
+
+               href="https://mtr-web.github.io/EJEMPLO-Pulseboard/"
+
+               target="_blank" rel="noopener noreferrer"
+
+               aria-label="Visitar Pulseboard">
+
+              <div class="project-browser"><span></span><span></span><span></span></div>
+
+              <div class="pulseboard-content">
+
+                <span class="project-tag">PRODUCTIVIDAD</span>
+
+                <h3>Pulseboard<span>.</span></h3>
+
+                <p>Todo tu progreso, en un solo lugar.</p>
+
+                <div class="pulseboard-stats">
+
+                  <div class="pulse-stat">
+
+                    <span>Progreso</span>
+
+                    <strong>84%</strong>
+
+                    <div class="pulse-bar"><span></span></div>
+
+                  </div>
+
+                  <div class="pulse-stat">
+
+                    <span>Tareas completadas</span>
+
+                    <strong>24</strong>
+
+                    <div class="pulse-bar"><span></span></div>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+            </a>
+
+            <div class="project-info">
+
+              <div>
+
+                <h3>Pulseboard</h3>
+
+                <p>Dashboard de productividad</p>
+
+              </div>
+
+              <a class="project-arrow"
+
+                 href="https://mtr-web.github.io/EJEMPLO-Pulseboard/"
+
+                 target="_blank" rel="noopener noreferrer" aria-label="Abrir Pulseboard">↗</a>
+
+            </div>
+
+          </article>
+
+          <!-- ARCADE & BISTRO -->
+          <article class="project-card">
+            <a class="project arcade-bistro"
+               href="https://mtr-web.github.io/arcade-bistro/"
+               target="_blank" rel="noopener noreferrer"
+               aria-label="Visitar Arcade & Bistro">
+              <div class="project-browser"><span></span><span></span><span></span></div>
+              <div class="arcade-bistro-content">
+                <span class="project-tag">GASTRONOMÍA & GAMING</span>
+                <h3>ARCADE <span>&</span><br>BISTRO<span>.</span></h3>
+                <p>Comé. Jugá. Repetí.</p>
+                <div class="arcade-bistro-bottom">
+                  <span>CARTA DIGITAL</span>
+                  <span>ARCADE</span>
+                  <span>RESERVAS</span>
+                </div>
+              </div>
+            </a>
+            <div class="project-info">
+              <div>
+                <h3>Arcade & Bistro</h3>
+                <p>Web gastronómica interactiva</p>
+              </div>
+              <a class="project-arrow"
+                 href="https://mtr-web.github.io/arcade-bistro/"
+                 target="_blank" rel="noopener noreferrer"
+                 aria-label="Abrir Arcade & Bistro">↗</a>
+            </div>
+          </article>
+
+          <!-- GARAGE X -->
+          <article class="project-card">
+            <a class="project garage-x"
+               href="https://mtr-web.github.io/Garage-X/"
+               target="_blank" rel="noopener noreferrer"
+               aria-label="Visitar Garage X">
+              <div class="project-browser"><span></span><span></span><span></span></div>
+              <div class="garage-x-content">
+                <span class="project-tag">AUTOMOTOR · CATÁLOGO DIGITAL</span>
+                <h3>GARAGE<br><span>X.</span></h3>
+                <p>Tu próximo auto, a un clic.</p>
+                <div class="garage-x-bottom">
+                  <span>FILTROS</span>
+                  <span>FICHAS DE AUTOS</span>
+                  <span>WHATSAPP</span>
+                </div>
+              </div>
+            </a>
+            <div class="project-info">
+              <div>
+                <h3>Garage X</h3>
+                <p>Concesionaria digital conceptual</p>
+              </div>
+              <a class="project-arrow"
+                 href="https://mtr-web.github.io/Garage-X/"
+                 target="_blank" rel="noopener noreferrer"
+                 aria-label="Abrir Garage X">↗</a>
+            </div>
+          </article>
+
+          <!-- FUEGO FEST -->
+          <article class="project-card">
+            <a class="project fuego-fest"
+               href="https://mtr-web.github.io/Fuego-Test/"
+               target="_blank" rel="noopener noreferrer"
+               aria-label="Visitar FUEGO FEST">
+              <div class="project-browser"><span></span><span></span><span></span></div>
+              <div class="fuego-fest-content">
+                <span class="project-tag">MÚSICA & FESTIVALES</span>
+                <h3>FUEGO<br><span>FEST.</span></h3>
+                <p>El rock nos prende.</p>
+                <div class="fuego-fest-bottom">
+                  <span>LINEUP INTERACTIVO</span>
+                  <span>MAPA</span>
+                  <span>CUENTA REGRESIVA</span>
+                </div>
+              </div>
+            </a>
+            <div class="project-info">
+              <div>
+                <h3>FUEGO FEST</h3>
+                <p>Festival de música conceptual</p>
+              </div>
+              <a class="project-arrow"
+                 href="https://mtr-web.github.io/Fuego-Test/"
+                 target="_blank" rel="noopener noreferrer"
+                 aria-label="Abrir FUEGO FEST">↗</a>
+            </div>
+          </article>
+
+          <!-- BLACKLINE BARBER CLUB -->
+
+          <article class="project-card">
+
+            <a class="project blackline"
+               href="https://mtr-web.github.io/EJEMPLO-Pagina-barber-a/"
+               target="_blank" rel="noopener noreferrer"
+               aria-label="Visitar BLACKLINE Barber Club">
+
+              <div class="project-browser"><span></span><span></span><span></span></div>
+
+              <div class="blackline-content">
+                <span class="project-tag">BARBERÍA & ESTILO</span>
+                <h3>BLACKLINE<span>.</span></h3>
+                <p>Tu estilo. Tu identidad.</p>
+                <div class="blackline-bottom">
+                  <span>CORTES</span>
+                  <span>BARBA</span>
+                  <span>ESTILO</span>
+                </div>
+              </div>
+
+            </a>
+
+            <div class="project-info">
+              <div>
+                <h3>BLACKLINE Barber Club</h3>
+                <p>Web para barbería</p>
+              </div>
+              <a class="project-arrow"
+                 href="https://mtr-web.github.io/EJEMPLO-Pagina-barber-a/"
+                 target="_blank" rel="noopener noreferrer"
+                 aria-label="Abrir BLACKLINE Barber Club">↗</a>
+            </div>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- NOSOTROS -->
+
+    <section class="about section" id="nosotros">
+
+      <div class="container about-grid">
+
+        <div class="about-title">
+
+          <span class="eyebrow">03 — NOSOTROS</span>
+
+          <h2>Diseño con <span class="accent">intención.</span></h2>
+
+        </div>
+
+        <div class="about-copy">
+
+          <p>MTR Studio nace de una idea simple: cada negocio merece una presencia digital que represente lo que hace y hacia dónde quiere ir.</p>
+
+          <p>Buscamos combinar estética, claridad y funcionalidad para crear sitios web que no solo se vean bien, sino que también sean fáciles de usar.</p>
+
+          <p>Trabajamos en tres pasos: conversamos sobre tu negocio, te presentamos una propuesta de diseño y publicamos tu sitio listo para usar.</p>
+
+          <div class="about-values">
+
+            <span>Diseño moderno</span>
+
+            <span>Experiencia de usuario</span>
+
+            <span>Adaptabilidad</span>
+
+            <span>Atención al detalle</span>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- CONTACTO -->
+
+    <section class="section" id="contacto">
+
+      <div class="container contact-grid">
+
+        <div class="contact-copy">
+
+          <span class="eyebrow">04 — CONTACTO</span>
+
+          <h2>Tu próxima idea empieza <span class="accent">acá.</span></h2>
+
+          <p>Contanos qué tenés en mente. Podemos conversar sobre tu proyecto y encontrar una solución que se adapte a lo que necesitás.</p>
+
+          <div class="contact-detail">
+
+            <span>Correo electrónico</span>
+
+            <a id="contact-email-link" href="mailto:mtrstudio.webs@gmail.com">mtrstudio.webs@gmail.com</a>
+
+          </div>
+
+          <div class="contact-detail">
+
+            <span>WhatsApp</span>
+
+            <a href="https://wa.me/5491132185989?text=Hola%2C%20vi%20la%20web%20de%20MTR%20Studio%20y%20quiero%20consultar%20por%20un%20proyecto." target="_blank" rel="noopener noreferrer">Escribinos por WhatsApp ↗</a>
+
+          </div>
+
+        </div>
+
+        <form class="contact-form" id="contact-form">
+
+          <div class="form-row">
+
+            <div class="form-field">
+
+              <label for="name">Nombre</label>
+
+              <input id="name" name="name" type="text" placeholder="Tu nombre" required>
+
+            </div>
+
+            <div class="form-field">
+
+              <label for="email">Correo electrónico</label>
+
+              <input id="email" name="email" type="email" placeholder="tu@email.com" required>
+
+            </div>
+
+          </div>
+
+          <div class="form-field">
+
+            <label for="subject">¿Qué necesitás?</label>
+
+            <input id="subject" name="subject" type="text" placeholder="Diseño web, tienda online..." required>
+
+          </div>
+
+          <div class="form-field">
+
+            <label for="message">Contanos sobre tu proyecto</label>
+
+            <textarea id="message" name="message" placeholder="Escribí tu mensaje..." required></textarea>
+
+          </div>
+
+          <button class="button" type="submit">Enviar consulta <span>↗</span></button>
+
+          <div class="form-status" id="form-status" role="status" aria-live="polite"></div>
+
+        </form>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer class="footer">
+
+    <div class="container footer-inner">
+
+      <a class="brand" href="#inicio">
+
+        <span class="brand-mark-image footer-brand-image"><img src="https://mtr-web.github.io/logo-mtr.png" alt="Logo MTR Studio"></span>
+
+        <span>MTR Studio</span>
+
+      </a>
+
+      <p>© <span id="year"></span> MTR Studio. Todos los derechos reservados.</p>
+
+      <div class="footer-links">
+
+        <a href="#inicio">Inicio</a>
+
+        <a href="#proyectos">Proyectos</a>
+
+        <a href="#contacto">Contacto</a>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+  <a class="social-float instagram" href="https://www.instagram.com/mtrstudio.webs/" target="_blank" rel="noopener noreferrer" aria-label="Seguir a MTR Studio en Instagram" title="@mtrstudio.webs">
+    <svg viewBox="0 0 24 24" aria-hidden="true" fill="none">
+      <rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="2"/>
+      <circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2"/>
+      <circle cx="17.5" cy="6.5" r="1.2" fill="currentColor"/>
+    </svg>
+  </a>
+  <a class="social-float whatsapp" id="whatsapp-link" href="#contacto" aria-label="Contactar por WhatsApp" title="Contactar">
+    <svg viewBox="0 0 32 32" aria-hidden="true" fill="currentColor">
+      <path d="M16 3.2A12.6 12.6 0 0 0 5.2 22.3L3.5 28.5l6.4-1.7A12.6 12.6 0 1 0 16 3.2Zm0 22.8c-2 0-4-.5-5.7-1.6l-.4-.2-3.8 1 1-3.7-.3-.4A10.1 10.1 0 1 1 16 26Zm5.5-7.6c-.3-.2-1.8-.9-2.1-1s-.5-.2-.7.2-.8 1-1 1.2-.4.2-.7 0a8.3 8.3 0 0 1-2.5-1.5 9.3 9.3 0 0 1-1.7-2.1c-.2-.3 0-.5.2-.7l.5-.6c.2-.2.2-.4.3-.6.1-.2 0-.4 0-.6s-.7-1.7-1-2.3c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4s-1.2 1.2-1.2 2.8 1.2 3.2 1.4 3.4a13 13 0 0 0 5 4.4c.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.3-.7.3-1.3.2-1.4s-.3-.3-.6-.4Z"/>
+    </svg>
+  </a>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
